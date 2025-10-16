@@ -1,3 +1,7 @@
+## load in libraries
+library(vcfR)
+
+########## functions from short assignment ##########
 freq_GT = function(site,ploidy=1){
   clean_site = na.omit(site)
   total_sites = ploidy*length(site)
@@ -74,4 +78,45 @@ process_GT = function(GT,samples){
   summary_list[["r2_means"]] <- r2_means
   
   return(summary_list)
+}
+
+########## functions from labs 3 & 4 ##########
+## lab 3
+n_obs = function(row) {
+  return(length(row)*2)
+  }
+
+dxy_site = function(p1,p2){
+  dxy = p1*(1-p2)+p2*(1-p1)
+  return(dxy)
+}
+
+## lab 4
+freq_ij = function(site_i,site_j){
+    n_ij = length(intersect(which(site_i==1),which(site_j==1)))
+    n_sites =  length(which(!is.na(site_i)) | which (!is.na(site_j)))
+    return(n_ij/n_sites)
+}
+
+d_ij = function(site_i,site_j){
+    p_i = freq_GT(site_i,1)
+    p_j = freq_GT(site_j,1)
+    p_ij = freq_ij(site_i,site_j)
+    D_ij = p_ij - p_i*p_j
+    return(D_ij)
+}
+
+allele_2_num = function(site,name){
+  div_allele = gsub(".*:.*:([A,T,C,G]+):","",name)
+  GT_row = as.numeric(site==div_allele)
+  return(GT_row)
+}
+
+extract_haps = function(vcf){
+  haps = extract.haps(vcf)
+  names = rownames(haps)
+  num_mat = t(sapply(1:dim(haps)[1],function(x) allele_2_num(haps[x,],names[x])))
+  rownames(num_mat) = names
+  colnames(num_mat) = colnames(haps)
+  return(num_mat)
 }
