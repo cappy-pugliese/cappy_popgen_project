@@ -2,7 +2,7 @@
 
 ## Data used for the project
 
-I will be working on the same vcf dataset that I am using for my current Master's project looking at *Pseudogymnoascus destructans* individuals, the organism responsible for White Nose Syndrome in bats. This data was compiled from the NCBI database for *P. destructan* whole genome sequence samples taken from North America. I have already processed the dataset into a vcf with 74 *P. destructans* individuals.
+I will be working on the same vcf dataset that I am using for my current Master's project looking at *Pseudogymnoascus destructans* individuals, the organism responsible for White Nose Syndrome in bats. This data was compiled from the NCBI database for *P. destructan* whole genome sequence samples. I have already processed the dataset into a vcf with 74 *P. destructans* individuals.
 
 ## Population structure analysis
 
@@ -23,7 +23,7 @@ $PLDIR/plink --vcf $INDIR/pd.vcf.gz \
 --out plink_pd
 ```
 
-The `--make-bed` and `--out` arguments [are needed]{.underline} in order to get the proper output plink files needed for PCAngsd
+The `--make-bed` and `--out` arguments are needed in order to get the proper output plink files needed for PCAngsd
 
 The `--maf`, `--geno`, and `--mind` options all help with filtering out any variants that don't meet specific thresholds:
 
@@ -33,7 +33,7 @@ The `--maf`, `--geno`, and `--mind` options all help with filtering out any vari
 
 ### Running PCAngsd
 
-After running Plink, we can now use the output files to run PCAngsd. We will be ussing the `-admix` option to calculate population structure and generate our visual output.
+After running Plink, we can now use the output files to run PCAngsd (full script found [here](code/scripts/08_pcangsd.sh)). We will be using the `-admix` option to calculate population structure and generate our visual output.
 
 ```{bash}
 $PCANGSD -plink $INDIR/plink_pd \

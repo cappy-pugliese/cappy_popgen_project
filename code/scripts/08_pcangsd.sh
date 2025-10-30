@@ -6,8 +6,6 @@
 #SBATCH --mem=5G
 #SBATCH --partition=general
 #SBATCH --qos=general
-#SBATCH --mail-type=ALL
-#SBATCH --mail-user=caprina.pugliese@uconn.edu
 #SBATCH -o %x_%j.out
 #SBATCH -e %x_%j.err
 
@@ -18,13 +16,14 @@ date
 
 ## load modules
 module load pcangsd/1.0
-source /home/FCAM/cpugliese/.bashrc
+source ~/.bashrc
+    # need to add conda to path
 conda activate pcangsd
 
 ## set variables
-INDIR=/home/FCAM/cpugliese/lab_wns/vcfs/03_filtered-vcfs/plink_files/01_plink
-OUTDIR=/home/FCAM/cpugliese/lab_wns/vcfs/04_pcangsd/01_no-ld
-PCANGSD="python3 /isg/shared/apps/pcangsd/1.0/pcangsd/pcangsd.py"
+INDIR=/specify/in/directory/path/here
+OUTDIR=/specify/out/directory/path/here
+PCANGSD="python3 /path/to/pcangsd.py"
 
 cd $OUTDIR
 

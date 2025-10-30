@@ -1,0 +1,5 @@
+Short Assignment 2
+Due November 14th.
+1. Initial analysis of your data: a markdown script of what analyses you have run, with included figures of what results you have so far.
+2. Should include at least the first analysis we discussed in your one on one meetings - for many of you this is just looking for structure. PCAngsd is fine, or run fastSTRUCTURE, ADMIXTURE, etc.
+3. Write-up should include what follow-up analyses are warranted for your end goal. For example - will you need to run demographic analysis? What approaches will you use?
