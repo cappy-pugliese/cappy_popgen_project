@@ -6,7 +6,7 @@ setwd("/Users/caprinapugliese/Documents/School/Uconn/2024-26_Grad_School/Dagilis
 df_long <- read.csv("25_10-16_pd_pcangsd_longdf.csv")
 df_continent <- df_long |> group_by(continent) |> arrange(.by_group = TRUE)
 
-# population admixture per individual
+# graph 1: population admixture per individual
 ggplot(df_long,aes(x=ind,y=admix,fill=Pop)) +
 scale_fill_okabeito(
   palette = "full",
@@ -16,7 +16,7 @@ scale_fill_okabeito(
   ) +
 geom_col(col=NA,inherit.aes = TRUE)
 
-# graph looking at continent population admixture
+# graph 2: looking at continent population admixture
 ggplot(df_continent,aes(x=continent,y=admix,fill=Pop,group=Pop)) +
 scale_fill_okabeito(
   palette = "full",
@@ -26,7 +26,7 @@ scale_fill_okabeito(
   ) +
 geom_col(col=NA,inherit.aes = TRUE)
 
-# populations by continent
+# graph 3: by populations colored by continent
 ggplot(df_continent,aes(x=Pop,y=admix,fill=continent,group=continent)) +
 scale_fill_okabeito(
   palette = "full",
@@ -36,7 +36,7 @@ scale_fill_okabeito(
   ) +
 geom_col(col=NA,inherit.aes = TRUE)
 
-# by country
+# graph 4: by country
 ggplot(df_long,aes(x=country,y=admix,fill=Pop,group=Pop)) +
 scale_fill_okabeito(
   palette = "full",
@@ -47,7 +47,7 @@ scale_fill_okabeito(
 scale_x_discrete(limits = c("USA", "Canada", "Czech Republic","Ukraine","Hungary","France","Germany","Switzerland","Mongolia")) +
 geom_col(col=NA,inherit.aes = TRUE)
 
-# by state
+# graph 5: by state
 ggplot(df_long,aes(x=state,y=admix,fill=Pop,group=Pop)) +
 scale_fill_okabeito(
   palette = "full",

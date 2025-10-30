@@ -108,14 +108,28 @@ Full R script can be found [here](code/R_code/02_pcangsd_dataframe.R).
 
 #### Generating the graph
 
-Libraries needed and reading in the data:
-
 ```{r}
 library(ggplot2)
 library(see)
+# for graph colors
 library(dplyr)
+# not particularly necessary, but helpful for rearranging data if needed
 
 setwd("path/to/working/directory")
 df_long <- read.csv("pd_pcangsd_longdf.csv")
-df_continent <- df_long |> group_by(continent) |> arrange(.by_group = TRUE)
+
+# Making the graph:
+# Population admixture per individual
+ggplot(df_long,aes(x=ind,y=admix,fill=Pop)) +
+scale_fill_okabeito(
+  palette = "full",
+  reverse = FALSE,
+  order = 1:6,
+    # will need to change based on population number
+    # 1:[pop_number],
+  aesthetics = "fill",
+  ) +
+geom_col(col=NA,inherit.aes = TRUE)
 ```
+
+The full R script also has some other graphs I generated for my Master's project. Full R script can be found [here](code/R_code/03_pcangsd_graph.R). Other graphs can be found [here](figures/).
