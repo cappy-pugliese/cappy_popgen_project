@@ -6,7 +6,7 @@ setwd("/Users/caprinapugliese/Documents/School/Uconn/2024-26_Grad_School/Dagilis
 df_long <- read.csv("25_10-16_pd_pcangsd_longdf.csv")
 df_continent <- df_long |> group_by(continent) |> arrange(.by_group = TRUE)
 
-# og graph
+# population admixture per individual
 ggplot(df_long,aes(x=ind,y=admix,fill=Pop)) +
 scale_fill_okabeito(
   palette = "full",

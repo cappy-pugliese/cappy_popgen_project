@@ -4,6 +4,8 @@
 
 I will be working on the same vcf dataset that I am using for my current Master's project looking at *Pseudogymnoascus destructans* individuals, the organism responsible for White Nose Syndrome in bats. This data was compiled from the NCBI database for *P. destructan* whole genome sequence samples. I have already processed the dataset into a vcf with 74 *P. destructans* individuals.
 
+------------------------------------------------------------------------
+
 ## Population structure analysis
 
 To look at population structure, I'll be using PCAngsd version 1.0 and generating a graph of the population structure it calculates.
@@ -42,6 +44,8 @@ $PCANGSD -plink $INDIR/plink_pd \
 ```
 
 ### Looking at PCAngsd output
+
+#### Generating the dataframe
 
 To look at PCAngsd output, I used the R library ***reticulate*** and imported python's ***numpy*** in order to properly read the `admix.[pop_number].Q.npy` file into R for analysis.
 
@@ -100,4 +104,18 @@ df_long = pivot_longer(admix,1:k,names_to="Pop",values_to="admix")
 write.csv(df_long,file="pd_pcangsd_longdf.csv",row.names=FALSE,quote=FALSE)
 ```
 
-Full R script can be found here.
+Full R script can be found [here](code/R_code/02_pcangsd_dataframe.R).
+
+#### Generating the graph
+
+Libraries needed and reading in the data:
+
+```{r}
+library(ggplot2)
+library(see)
+library(dplyr)
+
+setwd("path/to/working/directory")
+df_long <- read.csv("pd_pcangsd_longdf.csv")
+df_continent <- df_long |> group_by(continent) |> arrange(.by_group = TRUE)
+```
