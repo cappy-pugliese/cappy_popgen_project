@@ -41,4 +41,63 @@ $PCANGSD -plink $INDIR/plink_pd \
 -out pcangsd_pd
 ```
 
-then add in pcangsd stuff into this project and elaborate on graph creation
+### Looking at PCAngsd output
+
+To look at PCAngsd output, I used the R library ***reticulate*** and imported python's ***numpy*** in order to properly read the `admix.[pop_number].Q.npy` file into R for analysis.
+
+```{r}
+#install.packages("reticulate")
+library("reticulate")
+# to help read .npy file
+# good for combining python with R
+np <- import("numpy")
+# load in numpy
+library(readr)
+library(tidyverse)
+
+setwd("path/to/working/directory")
+
+## loading it in
+admix <- np$load(file = "file_name.admix.[pop_number].Q.npy",allow_pickle=FALSE)
+k <- your pop number here
+# set k equal to the population number that PCAngsd calculates for you. The pop number will be in the admix file name.
+admix= as.data.frame(admix)
+
+head(admix)
+# shows the first few lines of the admix dataframe
+```
+
+After loading in the admix data frame, I created a for loop to match the admix calculations to their proper population group
+
+```{r}
+pops <- c()
+for (n in 1:k) {
+    pops <- c(pops, paste0("pop", n))
+}
+colnames(admix) <- pops
+```
+
+Then I read in a text file that had a list of all my individual sample's names and a .csv file of their location data. I then added in certain columns from these files into the admix dataframe.
+
+```{r}
+indivs <- read.csv("ind_ids.txt")
+pd_locations <- read.csv("pd_locations.csv")
+
+rownames(admix) = indivs$individuals
+admix$ind = indivs$individuals
+admix$continent = pd_locations$continent
+admix$country = pd_locations$country
+admix$state = pd_locations$state
+```
+
+I then pivoted the dataframe to work with tidy data, and wrote it to a .csv to work with.
+
+```{r}
+#Pivot to long format
+df_long = pivot_longer(admix,1:k,names_to="Pop",values_to="admix")
+
+#write to .csv
+write.csv(df_long,file="pd_pcangsd_longdf.csv",row.names=FALSE,quote=FALSE)
+```
+
+Full R script can be found here.
