@@ -129,7 +129,10 @@ scale_fill_okabeito(
     # 1:[pop_number],
   aesthetics = "fill",
   ) +
+theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 8)) +
 geom_col(col=NA,inherit.aes = TRUE)
 ```
+
+![](figures/01_pcangsd_by-indiv.jpeg)
 
 The full R script also has some other graphs I generated for my Master's project. Full R script can be found [here](code/R_code/03_pcangsd_graph.R). Other graphs can be found [here](figures/).

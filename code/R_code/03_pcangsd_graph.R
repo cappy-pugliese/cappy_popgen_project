@@ -14,6 +14,7 @@ scale_fill_okabeito(
   order = 1:6,
   aesthetics = "fill",
   ) +
+theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 8)) +
 geom_col(col=NA,inherit.aes = TRUE)
 
 # graph 2: looking at continent population admixture
