@@ -47,7 +47,7 @@ scale_fill_okabeito(
 scale_x_discrete(limits = c("USA", "Canada", "Czech Republic","Ukraine","Hungary","France","Germany","Switzerland","Mongolia")) +
 geom_col(col=NA,inherit.aes = TRUE)
 
-# by state- not that great
+# by state
 ggplot(df_long,aes(x=state,y=admix,fill=Pop,group=Pop)) +
 scale_fill_okabeito(
   palette = "full",
