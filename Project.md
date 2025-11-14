@@ -1,8 +1,18 @@
 # Cappy's Popgen Project
 
-## Data used for the project
+------------------------------------------------------------------------
 
-I will be working on the same vcf dataset that I am using for my current Master's project looking at *Pseudogymnoascus destructans* individuals, the organism responsible for White Nose Syndrome in bats. This data was compiled from the NCBI database for *P. destructan* whole genome sequence samples. I have already processed the dataset into a vcf with 74 *P. destructans* individuals.
+## Introduction
+
+### Dataset
+
+I will be working on the same vcf dataset that I am using for my current Master's thesis project looking at *Pseudogymnoascus destructans* individuals, the organism responsible for White Nose Syndrome in bats. This data was compiled from the NCBI database for *P. destructans* whole genome sequence samples. I have already processed the dataset into a vcf with 74 *P. destructans* individuals.
+
+### Project Goals
+
+The goal of this project is to look at and analyze the population structure of *P. destructans.* Looking at population structure will help me figure out the presence of any distinct subpopulations within my data. This will be very helpful for my Master's project which focuses on the genetic differences between *P. destructans* individuals and gene flow.
+
+Here, I will analyze population structure using PCAngsd.
 
 ------------------------------------------------------------------------
 
@@ -133,6 +143,24 @@ theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 8)) +
 geom_col(col=NA,inherit.aes = TRUE)
 ```
 
-![](figures/01_pcangsd_by-indiv.jpeg)
+![](figures/01-01_pcangsd_by-indiv.jpeg){width="505"}
 
 The full R script also has some other graphs I generated for my Master's project. Full R script can be found [here](code/R_code/03_pcangsd_graph.R). Other graphs can be found [here](figures/).
+
+------------------------------------------------------------------------
+
+## PCAngsd Results
+
+Playing around with the PCAngsd graphs and grouping them by continent, you can see, while there aren't nearly as many samples from Asia and Europe, their individuals mainly consist of subpopulation 3 (green), while most of the North American samples are part of subpopulation 4 (yellow). The European individuals also have a bit of subpopulaiton 4, while the Asian individuals do not. This provides evidence to the theory that *P. destructans* was brought over to North America from Europe rather than Asia.
+
+![](figures/01-02_pcangsd_grouped.jpeg){width="903"}
+
+There is also a small portion of individuals from North America (samples 29-34) whose admixtures look a bit different from the rest. As I was going back and collecting more metadata for my samples, I realized that these individuals are not actually *P. destructrans,* but rather some close relatives within the *Pseudogymnoascus* genus. This would explain why their structure is very funky, and it may have messed up the admixture results a bit, since they are different species.
+
+------------------------------------------------------------------------
+
+## Future analyses
+
+1.  For my Master's project, I am currently trying to generate some phylogenetic trees using iqtree3. Hopefully, I should be able to generate some phylogenies and try to see if I can see any geographic patterns based on what iqtree produces.
+2.  I can probably try running PCAngsd again, this time excluding the non *P. destructans* samples, and maybe also excluding the Asian and European samples, to see if there are any different population structure results.
+3.  Eventual goal is to run FEEMS or Aligatr for landscape genomics analysis, but I am unsure if that is doable before the end of the semester.

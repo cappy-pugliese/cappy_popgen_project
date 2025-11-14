@@ -6,7 +6,7 @@ setwd("/Users/caprinapugliese/Documents/School/Uconn/2024-26_Grad_School/Dagilis
 df_long <- read.csv("25_10-16_pd_pcangsd_longdf.csv")
 df_continent <- df_long |> group_by(continent) |> arrange(.by_group = TRUE)
 
-# graph 1: population admixture per individual
+# graph 1-1: population admixture per individual
 ggplot(df_long,aes(x=ind,y=admix,fill=Pop)) +
 scale_fill_okabeito(
   palette = "full",
@@ -16,6 +16,19 @@ scale_fill_okabeito(
   ) +
 theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 8)) +
 geom_col(col=NA,inherit.aes = TRUE)
+
+# graph 1-2: pop admixture per individual, grouped by continent
+ggplot(df_long,aes(x=ind,y=admix,fill=Pop)) +
+scale_fill_okabeito(
+  palette = "full",
+  reverse = FALSE,
+  order = 1:6,
+  aesthetics = "fill",
+  ) +
+geom_col(col=NA,inherit.aes = TRUE) +
+theme(axis.text.x = element_text(angle = 90, hjust = 1, size=8)) +
+geom_col(col=NA,inherit.aes = TRUE) +
+facet_wrap( ~ continent, strip.position = "bottom", scales = "free_x")
 
 # graph 2: looking at continent population admixture
 ggplot(df_continent,aes(x=continent,y=admix,fill=Pop,group=Pop)) +
