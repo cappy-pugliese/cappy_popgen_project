@@ -1,4 +1,6 @@
-# Short Assignment 2
+# Final Project
+
+## Part 1: Short Assignment 2
 
 ------------------------------------------------------------------------
 

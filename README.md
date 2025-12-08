@@ -1,3 +1,5 @@
 # Cappy's Popgen Project
 
-[Short Assignment 2](Short_assign2.md)
+--\> Part 1: [Short Assignment 2](Part1_Short_assign2.md)
+
+--\> Part 2: [Finishing the Project](Part2_finishing-the-project.md)
