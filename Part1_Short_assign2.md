@@ -166,3 +166,5 @@ There is also a small portion of individuals from North America (samples 29-34) 
 1.  For my Master's project, I am currently trying to generate some phylogenetic trees using iqtree3. Hopefully, I should be able to generate some phylogenies and try to see if I can see any geographic patterns based on what iqtree produces.
 2.  I can probably try running PCAngsd again, this time excluding the non *P. destructans* samples, and maybe also excluding the Asian and European samples, to see if there are any different population structure results.
 3.  Eventual goal is to run FEEMS or Aligatr for landscape genomics analysis, but I am unsure if that is doable before the end of the semester.
+
+[Continued in Part 2](Part2_finishing-the-project.md) --\>

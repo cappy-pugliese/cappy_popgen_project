@@ -16,27 +16,13 @@ date
 
 ## variables
 VCF=/path/to/orignial/vcf.gz
-OUTDIR=/path/to/vcf/output/directory
-OUTNAME1=file-name-for-vcf.gz
 SAMPLES=/path/to/samples.txt
-OUTDIR2=/output/directory/for/filtered/vcf
-OUTNAME2=file-name-for-filtered-vcf.gz
+OUTDIR=/output/directory/for/filtered/vcf
+OUTNAME=file-name-for-filtered-vcf.gz
 
 ## load modules
-module load bcftools/1.20
-
-## run bcftools to view north american samples only
-## no filtering done
-bcftools view -S $SAMPLES \
--Oz \
--o $OUTDIR/$OUTNAME1 \
-$VCF
-
-
-## filter using bcftools
-module purge
 module load bcftools/1.9
-# bcftools 1.20 does not work when filtering with more than one -i option
+# note bcftools 1.20 does not work when filtering with more than one -i option
 
 bcftools view -S $SAMPLES \
 -i 'QUAL>20' \
@@ -45,7 +31,7 @@ bcftools view -S $SAMPLES \
 -m2 \
 -M2 \
 -Oz \
--o $OUTDIR2/$OUTNAME2 \
+-o $OUTDIR/$OUTNAME \
 $VCF
 
 ########### script end
