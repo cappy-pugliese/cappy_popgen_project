@@ -22,7 +22,7 @@ To look at population structure, I'll be using PCAngsd version 1.0 and generatin
 
 ### Running Plink
 
-In order for PCAngsd to run, we need to use Plink to generate some output. Here, I used Plink version 1.90.beta.4.4 (mainly because that was the most recent version that worked for me that was already installed on the cluster). The full Plink script can be found [here,](code/scripts/07_plink-vcf.sh) but these are the options I specified for my script:
+In order for PCAngsd to run, we need to use Plink to generate some output. Here, I used Plink version 1.90.beta.4.4 (mainly because that was the most recent version that worked for me that was already installed on the cluster). The full Plink script can be found [here,](code/scripts/01_plink-vcf.sh) but these are the options I specified for my script:
 
 ```{bash}
 $PLDIR/plink --vcf $INDIR/pd.vcf.gz \
@@ -45,7 +45,7 @@ The `--maf`, `--geno`, and `--mind` options all help with filtering out any vari
 
 ### Running PCAngsd
 
-After running Plink, we can now use the output files to run PCAngsd (full script found [here](code/scripts/08_pcangsd.sh)). We will be using the `-admix` option to calculate population structure and generate our visual output.
+After running Plink, we can now use the output files to run PCAngsd (full script found [here](code/scripts/02_pcangsd.sh)). We will be using the `-admix` option to calculate population structure and generate our visual output.
 
 ```{bash}
 $PCANGSD -plink $INDIR/plink_pd \
@@ -143,9 +143,9 @@ theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 8)) +
 geom_col(col=NA,inherit.aes = TRUE)
 ```
 
-![](figures/01-01_pcangsd_by-indiv.jpeg){width="505"}
+![](figures/01_all-samples/01-01_pcangsd_by-indiv.jpeg){width="505"}
 
-The full R script also has some other graphs I generated for my Master's project. Full R script can be found [here](code/R_code/03_pcangsd_graph.R). Other graphs can be found [here](figures/).
+The full R script also has some other graphs I generated for my Master's project. Full R script can be found [here](code/R_code/03_pcangsd_graph.R). Other graphs can be found [here](/figures/01_all-samples/).
 
 ------------------------------------------------------------------------
 
@@ -153,7 +153,7 @@ The full R script also has some other graphs I generated for my Master's project
 
 Playing around with the PCAngsd graphs and grouping them by continent, you can see, while there aren't nearly as many samples from Asia and Europe, their individuals mainly consist of subpopulation 3 (green), while most of the North American samples are part of subpopulation 4 (yellow). The European individuals also have a bit of subpopulaiton 4, while the Asian individuals do not. This provides evidence to the theory that *P. destructans* was brought over to North America from Europe rather than Asia.
 
-![](figures/01-02_pcangsd_grouped.jpeg){width="903"}
+![](figures/01_all-samples/01-02_pcangsd_grouped.jpeg){width="903"}
 
 There is also a small portion of individuals from North America (samples 29-34) whose admixtures look a bit different from the rest. As I was going back and collecting more metadata for my samples, I realized that these individuals are not actually *P. destructrans,* but rather some close relatives within the *Pseudogymnoascus* genus. This would explain why their structure is very funky, and it may have messed up the admixture results a bit, since they are different species.
 
