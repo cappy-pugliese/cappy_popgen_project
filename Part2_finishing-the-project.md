@@ -35,12 +35,18 @@ Full script can be found [here](code/scripts/03_bcfview.sh)
 
 Afterwards, I reran Plink on the 2 new vcfs. This time around I used Plink 2.0 instead of version 1.90.beta.4.4, because I was able to download the newer version of the software onto the cluster. Then I reran PCAngsd for both and processed them through R to make graphs.
 
+------------------------------------------------------------------------
+
 ## Results
 
 ### Only Pd Samples
 
 ### Only North American Pd Samples
 
+------------------------------------------------------------------------
+
 ## Discussion
+
+------------------------------------------------------------------------
 
 ## Broader Analysis
