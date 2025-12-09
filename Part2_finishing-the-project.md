@@ -31,9 +31,9 @@ bcftools view -S $SAMPLES \
 $VCF
 ```
 
-Full script can be found [here](code/scripts/03_bcfview.sh)
+Full script can be found [here](/code/scripts/03_bcfview.sh)
 
-Afterwards, I reran Plink on the 2 new vcfs. This time around I used Plink 2.0 instead of version 1.90.beta.4.4, because I was able to download the newer version of the software onto the cluster. Then I reran PCAngsd for both and processed them through R to make graphs.
+Afterwards, I reran Plink on the 2 new vcfs. This time around I used **Plink 2.0** instead of version 1.90.beta.4.4, because I was able to download the newer version of the software onto the cluster. Then I reran PCAngsd for both and processed them through R to make graphs (using similar code as before). These new R scripts can be found in the [R_code](/code/R_code/) folder.
 
 ------------------------------------------------------------------------
 
@@ -41,7 +41,11 @@ Afterwards, I reran Plink on the 2 new vcfs. This time around I used Plink 2.0 i
 
 ### Only Pd Samples
 
+![](figures/02_only-pd-samples/25_12-09_pd-only_pcangsd_by-continent.png)
+
 ### Only North American Pd Samples
+
+![](figures/03_only-n-american-pd-samples/25_12-09_n-amer-pd_pcangsd_by-country.png)
 
 ------------------------------------------------------------------------
 
