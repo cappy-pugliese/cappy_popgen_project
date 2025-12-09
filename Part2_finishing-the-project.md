@@ -52,11 +52,11 @@ for (n in 1:k) {
 
 ### Only Pd Samples
 
-![](figures/02_only-pd-samples/25_12-09_pd-only_pcangsd_by-continent.png)
+![](figures/02_only-pd-samples/25_12-09_only-pd_by-continent.png)
 
 ### Only North American Pd Samples
 
-![](figures/03_only-n-american-pd-samples/25_12-09_n-amer-pd_pcangsd_by-country.png)
+![](figures/03_only-n-american-pd-samples/25_12-09_n-amer-pd_by-country.png)
 
 ------------------------------------------------------------------------
 
