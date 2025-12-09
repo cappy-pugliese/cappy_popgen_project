@@ -16,7 +16,7 @@ scale_fill_manual(values = rev(cols)) +
 geom_col(col=NA,inherit.aes = TRUE) +
 theme(axis.text.x = element_text(angle = 90, hjust = 1, size=8), legend.key.size=unit(0.5, 'cm')) +
 geom_col(col=NA,inherit.aes = TRUE) +
-labs(title = "Pd Only Samples PCAngsd Admixture", x = "Individuals", y = "Admix") 
+labs(title = "Only Pd Samples: PCAngsd Admixture", x = "Individuals", y = "Admix") 
 pd_ind
 # cvd_grid(pd_ind)
 # to check colors with different colorblind types
@@ -28,4 +28,4 @@ geom_col(col=NA,inherit.aes = TRUE) +
 theme(axis.text.x = element_text(angle = 90, hjust = 1, size=8), legend.key.size=unit(0.3, 'cm')) +
 geom_col(col=NA,inherit.aes = TRUE) +
 facet_grid( ~ continent, scales = "free_x", space="free_x") +
-labs(title = "Pd Only Samples by Continent", x = "Individuals", y = "Admix")
+labs(title = "Only Pd Samples: by Continent", x = "Individuals", y = "Admix")
