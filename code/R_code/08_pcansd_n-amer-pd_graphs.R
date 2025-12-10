@@ -25,4 +25,13 @@ geom_col(col=NA,inherit.aes = TRUE) +
 facet_wrap( ~ country, strip.position = "bottom", scales = "free_x") +
 labs(title = "North American Pd Samples by Country", x = "Individuals", y = "Admix") 
 plot2
-cvd_grid(plot2)
+#cvd_grid(plot2)
+
+## grouped by year
+ggplot(df_long,aes(x=ind,y=admix,fill=Pop)) +
+scale_fill_manual(values = rev(cols)) +
+geom_col(col=NA,inherit.aes = TRUE) +
+theme(axis.text.x = element_text(angle = 90, hjust = 1, size=8), legend.key.size=unit(0.3, 'cm')) +
+geom_col(col=NA,inherit.aes = TRUE) +
+facet_grid( ~ year, scales = "free_x", space="free_x", switch = "x") +
+labs(title = "North American Pd Samples by Year", x = "Individuals Separated by Year", y = "Admix") 

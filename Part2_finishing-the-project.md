@@ -52,7 +52,23 @@ for (n in 1:k) {
 
 ### Only Pd Samples
 
-![](figures/02_only-pd-samples/25_12-09_only-pd_by-continent.png)
+![](figures/02_only-pd-samples/25_12-10_only-pd_by-continent.png)
+
+Some things to note about this graph:
+
+-   PCAngsd output the maximum k value, so it's possible not all of these subpopulations are actually subpopulations
+
+    -   A lot of the North American samples have both populations 03, 05, 14, and 15
+
+-   There are 4 samples from North America that look identical: Pd_36, 37, 39, and 45
+
+    -   These individuals are all from New York from 2009, and are all cultures of the original Feb 2008 Williams Hotel 20631-21 type strain, which explains why they look identical
+
+    -   The actual sample they appear to be based off of (Pd_28) does not seem to share the same admixture as them for some reason
+
+-   Asside from these odd cultured strains, none of the North American samples appear to share the same population structure as the Asian samples (mostly pop04), but do share some similarities with the European samples, supporting the European Origin theory
+
+    -   Subpopulations 03 and 11 are present in some European samples and most American samples
 
 ### Only North American Pd Samples
 
