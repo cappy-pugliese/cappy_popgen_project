@@ -21,11 +21,17 @@ pd_ind
 # cvd_grid(pd_ind)
 # to check colors with different colorblind types
 
+continents_label <- c(
+  `Asia` = "Asia",
+  `Europe` = "Europe",
+  `N_America` = "North America"
+)
+
 ## grouped by continent graph
 ggplot(df_long,aes(x=ind,y=admix,fill=Pop)) +
 scale_fill_manual(values = rev(cols)) +
 geom_col(col=NA,inherit.aes = TRUE) +
 theme(axis.text.x = element_text(angle = 90, hjust = 1, size=8), legend.key.size=unit(0.3, 'cm')) +
 geom_col(col=NA,inherit.aes = TRUE) +
-facet_grid( ~ continent, scales = "free_x", space="free_x") +
+facet_grid( ~ continent, scales = "free_x", space="free_x", switch = "x", labeller = as_labeller(continents_label)) +
 labs(title = "Only Pd Samples: by Continent", x = "Individuals", y = "Admix")
