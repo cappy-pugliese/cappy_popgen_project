@@ -74,10 +74,40 @@ Some things to note about this graph:
 
 ![](figures/03_only-n-american-pd-samples/25_12-09_n-amer-pd_by-country.png)
 
+-   Once again you can see here that Pd_36, 37, 39, and 45 stand out and all look identical
+
+    -   because of this I ended up running pcangsd one more time excluding those samples
+
+-   The Canada samples seem to have a slightly different population structure compared to the USA samples
+
+------------------------------------------------------------------------
+
+## Second Round of Results
+
+### North American Pd Samples without the identical-looking cultures
+
+![](/figures/04_n-amer-no-cultures/25_12-10_n-amer-no-cultures_by-country.png)
+
+-   Now you can really see the difference between Canada and the USA samples
+
+    -   Canada has more of pops 5-7, while the USA has more of pops 1-4
+
+![](/figures/04_n-amer-no-cultures/25_12-10_n-amer-no-cultures_by-year.png)
+
+-   Separating by year as well seems to show a bit of a pattern as well
+
+    -   many of the older samples were mainly pops 1-3, then in 2012 transitioned to more of 5-7, then in 2015-16 saw the introduction of pop 4
+
+    -   These patterns might also be due to sample collection bias based on the timing and place that they were sampled, seeing that there were a lot of USA samples collected in 2008 - 2010, and Canada samples being collected more later
+
 ------------------------------------------------------------------------
 
 ## Discussion
 
+Based on the PCAngsd data, it looks like there does appear to be some patterns based on location and year. This would make sense in terms of evolution in relation to time and dispersal. These patterns were seen most clearly in the last PCAngst I ran that only looked at the North American Pd samples, minus those four individuals that appeared to be identical cultures of each other and had some weird admixture stuff going on. Additionally, support for the European Origin hypothesis is also supported in this run of PCAngsd only looking at the Pd data. The European samples had two subpopulations, pop 3 and 11, that were also present in many of the North American samples.
+
 ------------------------------------------------------------------------
 
 ## Broader Analysis
+
+I was not able to run TESS or Aligatr in time for this project's deadline, but those are my next steps for my Master's Thesis project. They hopefully will not take long, and from there, I can get a better sense of any geographical patterns that are present.
