@@ -35,7 +35,7 @@ Full script can be found [here](/code/scripts/03_bcfview.sh)
 
 Afterwards, I reran Plink on the 2 new vcfs. This time around I used **Plink 2.0** instead of version 1.90.beta.4.4, because I was able to download the newer version of the software onto the cluster. Then I reran PCAngsd for both and processed them through R to make graphs (using similar code as before). These new R scripts can be found in the [R_code](/code/R_code/) folder.
 
-The only major difference that was made was adjusting the population for loop to add padding to numbers less than two digits since the k's are larger now. I mainly did this so they would properly appear numerically later on in the graphs.
+For generating the dataset to work with, the only major difference that was made was adjusting the population *for loop* to add padding to numbers less than two digits since the k's are larger now. I mainly did this so they would properly appear numerically later on in the graphs.
 
 ```{r}
 pops <- c()
