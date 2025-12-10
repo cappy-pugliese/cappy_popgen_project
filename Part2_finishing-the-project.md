@@ -112,4 +112,5 @@ Based on the PCAngsd data, it looks like there does appear to be some patterns b
 
 ## Broader Analysis: Next Steps
 
-I was not able to run TESS or Aligatr in time for this project's deadline, but those are my next steps for my Master's Thesis project. They hopefully will not take long, and from there, I can get a better sense of any geographical patterns that are present.
+1.  I was not able to run TESS or Aligatr in time for this project's deadline, but those are my next steps for my Master's Thesis project. They hopefully will not take long, and from there, I can get a better sense of any geographical patterns that are present.
+2.  Finish running iqtree analysis and generate some phylogenetic trees for my samples
