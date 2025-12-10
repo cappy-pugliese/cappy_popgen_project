@@ -46,6 +46,8 @@ for (n in 1:k) {
 ## to ---> paste0("pop", sprintf("%02d", n))
 ```
 
+For making the PCAngsd graphs, I had to change up the color palette a bit because the original Okabe-Ito palette I had been working with did not have enough colors. I tried swapping to Viridis at first, but it was a bit difficult to distinguish some of the populations from each other. So instead, I built off of the Okabe-Ito color palette and added some lighter/darker versions of the already present colors, and messed around with the order a bit. The colors I ended up settling on can be seen in the graphs below, and the color codes that go along with them can be found at the top of [this script here.](/code/R_code/06_pcangsd_only-pd_graphs.R)
+
 ------------------------------------------------------------------------
 
 ## Results
@@ -96,7 +98,7 @@ Some things to note about this graph:
 
 -   Separating by year as well seems to show a bit of a pattern as well
 
-    -   many of the older samples were mainly pops 1-3, then in 2012 transitioned to more of 5-7, then in 2015-16 saw the introduction of pop 4
+    -   many of the older samples were mainly pops 1-3, then in 2012 transitioned to more of 5-7, then in 2015-16 saw the larger introduction of pop 4
 
     -   These patterns might also be due to sample collection bias based on the timing and place that they were sampled, seeing that there were a lot of USA samples collected in 2008 - 2010, and Canada samples being collected more later
 
@@ -104,10 +106,10 @@ Some things to note about this graph:
 
 ## Discussion
 
-Based on the PCAngsd data, it looks like there does appear to be some patterns based on location and year. This would make sense in terms of evolution in relation to time and dispersal. These patterns were seen most clearly in the last PCAngst I ran that only looked at the North American Pd samples, minus those four individuals that appeared to be identical cultures of each other and had some weird admixture stuff going on. Additionally, support for the European Origin hypothesis is also supported in this run of PCAngsd only looking at the Pd data. The European samples had two subpopulations, pop 3 and 11, that were also present in many of the North American samples.
+Based on the PCAngsd data, it looks like there does appear to be some patterns based on location and year. This would make sense in terms of evolution in relation to time and dispersal. These patterns were seen most clearly in the last PCAngst I ran that only looked at the North American Pd samples, minus those four individuals that appeared to be identical cultures of each other and had some weird admixture stuff going on. Additionally, support for the European Origin hypothesis is also supported in this run of PCAngsd only looking at the Pd data. The European samples had two subpopulations, pop 3 and 11, that were also present in many of the North American samples, while none of the Asian subpopulations were not seen in the North American samples (not including the 4 odd cultured samples).
 
 ------------------------------------------------------------------------
 
-## Broader Analysis
+## Broader Analysis: Next Steps
 
 I was not able to run TESS or Aligatr in time for this project's deadline, but those are my next steps for my Master's Thesis project. They hopefully will not take long, and from there, I can get a better sense of any geographical patterns that are present.
